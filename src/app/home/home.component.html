@@ -1,0 +1,33 @@
+<h3>My Files</h3>
+<div style="width: 800px"></div>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title> My Favorites </mat-panel-title>
+    <mat-panel-description>
+      This panel shows my favorites
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <adf-breadcrumb
+    class="files-breadcrumb"
+    root="Personal Files"
+    [target]="documentList"
+    [folderNode]="documentList.folderNode"
+  >
+  </adf-breadcrumb>
+  <adf-document-list #documentList currentFolderId="-favorites-">
+  </adf-document-list>
+</mat-expansion-panel>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>My Files </mat-panel-title>
+    <mat-panel-description> This panel shows my files </mat-panel-description>
+  </mat-expansion-panel-header>
+  <adf-breadcrumb
+    class="files-breadcrumb"
+    root="Personal Files"
+    [target]="favorites"
+    [folderNode]="documentList.folderNode"
+  >
+  </adf-breadcrumb>
+  <adf-document-list #favorites currentFolderId="-my-"> </adf-document-list>
+</mat-expansion-panel>
